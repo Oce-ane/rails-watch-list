@@ -1,9 +1,14 @@
 .main-card {
+  background-color: white;
+  padding: 3rem;
   margin-top: 3rem;
-  position: absolute;
-  top: 50%;
+  margin-bottom: 3rem;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 100vh;
+  position: relative;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%);
 }
 .card-category {
   background-size: cover;
@@ -31,6 +36,7 @@
 }
 .card-img {
   width: 100%;
+  border-radius: 5px 5px 0 0;
 }
 .card {
   display: flex;
@@ -38,6 +44,7 @@
   align-items: center;
   color: black;
   border-radius: 5px;
+  background-color: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 .card-banner {
@@ -67,4 +74,28 @@ a {
   a {
     color: red;
   }
+}
+.card-reviews {
+  display: flex;
+}
+.card-form {
+  background-color: white;
+  padding: 2rem;
+  position: sticky;
+  top: 0;
+  height: 340px;
+  border-radius: 5px;
+}
+.card-body {
+  margin-top: 2rem;
+}
+.btn {
+  color: white;
+}
+.btn-warning {
+  position: absolute;
+  top: 10%;
+  right: 6px;
+  background-color: rgb(226, 190, 74);
+  border-color: rgb(226, 190, 74);;
 }

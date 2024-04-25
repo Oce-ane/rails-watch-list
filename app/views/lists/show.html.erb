@@ -1,5 +1,6 @@
 <div class="card-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/?<%"#{@list.name})"%>">
   <%= @list.name %>
+  <button class="btn btn-warning"><%= @list.bookmarks.count %> movies</button>
 </div>
 <div class="container justify-content-center">
   <div class="cards">
@@ -24,7 +25,24 @@
         </div>
       <% end %>
   </div>
-<div class="card position-relative bottom-0 start-50 translate-middle-x" style="width: 40rem;">
-  <%= render "bookmarks/form", bookmark: @bookmark %>
-</div>
+  <br>
+  <div class="card position-relative bottom-0 start-50 translate-middle-x py-4" style="width: 40rem;">
+    <%= render "bookmarks/form", bookmark: @bookmark %>
+  </div>
+  <br>
+  <div class="border-bottom"></div>
+  <br>
+  <div class="card-reviews">
+    <div class="card-body">
+      <h2>Reviews</h2>
+      <br>
+      <% @list.reviews.each do |review| %>
+      <p><%= '⭐️' * review.rating %></p>
+      <p><%= review.comment %></p>
+      <% end %>
+    </div>
+    <div class="card-body card-form">
+      <%= render 'reviews/form', review: @review %>
+    </div>
+  </div>
 </div>
