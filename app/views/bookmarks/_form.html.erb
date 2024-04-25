@@ -1,0 +1,11 @@
+<h1>Add a movie</h1>
+<br>
+<p>Bookmark your movies so you remember to watch them</p>
+<br>
+
+<%= simple_form_for [@list, @bookmark] do |f| %>
+  <%= f.association :movie %>
+  <%= f.association :list %>
+  <%= f.input :comment %>
+  <%= f.submit %>
+<% end %>
