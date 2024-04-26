@@ -1,4 +1,8 @@
-<div class="card-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/?<%"#{@list.name})"%>">
+<% if @list.picture.attached? %>
+<div class="card-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= "#{cl_image_path @list.picture.key}" %>)">
+<% else %>
+<div class="card-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'movie_list.webp' %>)">
+<% end %>
   <%= @list.name %>
   <button class="btn btn-warning"><%= @list.bookmarks.count %> movies</button>
 </div>
@@ -38,7 +42,7 @@
       <br>
       <% @list.reviews.each do |review| %>
       <p><%= '⭐️' * review.rating %></p>
-      <p><%= review.comment %></p>
+      <p><%= review.remark %></p>
       <% end %>
     </div>
     <div class="card-body card-form">

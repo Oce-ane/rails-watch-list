@@ -11,6 +11,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to list_path(@list)
     else
+      @bookmark = Bookmark.new
       render 'lists/show', status: :unprocessable_entity
     end
   end
@@ -27,6 +28,6 @@ class ReviewsController < ApplicationController
   end
 
   def review_params
-    params.require(:review).permit(:comment, :rating, :list_id)
+    params.require(:review).permit(:remark, :rating, :list_id)
   end
 end
